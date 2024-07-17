@@ -250,6 +250,57 @@ là tập hợp các đối tượng, truy cập bằng chỉ mục và có các
       var lists = from <Biến lưu thông tin từng phần tử> in <Nguồn dữ liệu>
       [<Phép toán truy vấn: where, join ... in, order by...> Biều thức lambda]
       select <Biến lưu thông tin từng phần tử>
- 
+  
+* Cú pháp về LINQ Query Systax:
+  * ví dụ ta có 1 nguồn dữ liệu:
+  
+        int[] arr = {1, 2, 3, 4, 5};
+        private void MethodSystax ()
+        {
+          //dùng Query Systax lọc số chẵn trong mãng
+          var ds = from x in arr where x % 2 == 0 select x;
+
+          foeach (var a in ds)
+          {
+            .....
+          }
+        }
+
+* Cú pháp về LINQ Method Systax:
+  * ta tiếp tục sử dụng nguồn dữ liệu ở trên: 
+
+        private void MethodSystax ()
+        {
+          //where lọc ra method syntax 
+          var ds = arr.where(x => x % 2 == 0);
+
+          foeach (var a in ds)
+          {
+            .....
+          }
+        }
+
+* Cú pháp về LINQ Mix mode Method vs Query
+  * ta cũng tiếp tục nguồn dữ liệu trên:
+  
+        private void MethodSystax ()
+        {
+          //lọc ra số chắn và số lẽ sắp xếp giảm dần 
+          var ds = (from x in arr where x % 2 != 0 select x).orderByDescending(x=>x);
+
+          foeach (var a in ds)
+          {
+            .....
+          }
+        }
+* Khi chúng ta làm việc với các tập chứa các đối tượng (collection) như mảng (array) hay danh sách (list), chúng ta luôn có dịp làm việc với LINQ to Objects. LINQ to Objects trả về các biến kiểu IEnumerable<T> và không cần LINQ provider (API) như LINQ to SQL hay LINQ to XML.
+  * vd:
+   
+        public static IEnumerable<TSource> 
+        Where<TSource>
+        (
+          this IEnumerable<TSource> source, Func<TSource, bool> predicate
+        );
+* LINQ to Objects thay thế các đoạn mã lặp bằng các câu truy vấn ngắn gọn, dễ đọc, hiệu quả. Có thể dễ dàng chuyển đổi giữa các nguồn dữ liệu mà không cần chỉnh sửa hay chỉnh sửa rất ít.
         
   
