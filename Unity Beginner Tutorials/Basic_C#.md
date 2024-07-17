@@ -233,6 +233,23 @@ là tập hợp các đối tượng, truy cập bằng chỉ mục và có các
           }
         }
 
-## 25.   
+## 25. Lambda Expressions.
+* Lambda expression là một cú pháp rút gọn của việc định nghĩa một phương thức hay hàm trong lập trình. Thay vì phải viết một đoạn mã dài dòng để xác định cách thức hoạt động của phương thức, chúng ta có thể sử dụng lambda expression để định nghĩa phương thức một cách đơn giản và ngắn gọn hơn.
+## 26. LINQ (Language Integrated Query).
+* LINQ là là cách thức truy vấn dữ liệu từ một tập hợp dữ liệu.
+* LINQ cung cấp cho chúng ta những providers khác nhau để có thể truy vấn đến những nguồn dữ liệu khác nhau.
+  Tên Provider|Mô tả|
+  :-----------|:----|
+  LINQ to Objects|Sử dụng LINQ đối với các đối tượng collection mà implement từ IEnumerable hoặc IEnumerable<T> (dữ liệu được lưu trong bộ nhớ). Được sử dụng rộng rãi đặc biệt đối với những bài toán cần hiệu năng cao.|
+  LINQ to SQL|Thực hiện map các tables, views, store procedures thành các đối tượng. LINQ sẽ thực hiện truy vấn trên các đối tượng đó bằng cách chuyển đổi qua lại giữa đối tượng và câu lệnh sql.Ngoài truy vấn ta cũng có thể thực hiện thêm/sửa/xóa dữ liệu dựa trên các đối tượng trên. Hỗ trợ transaction. Ưu điểm: được sử dụng khá nhiều trong thực tế dưới cái tên Entity Framework hoặc Entity Framework Core.Nhược điểm: chỉ làm việc với cơ sở dữ liệu là SQL Server.|
+  LINQ to Entities|Tương tự như LINQ to SQL nhưng hỗ trợ nhiều loại cơ sở dữ liệu. Nhược điểm: sử dụng phức tạp. Nhiều cơ sở dữ liệu không thích hợp sử dụng chung với .Net|
+  LINQ to DataSets|Sự kết hợp giữa LINQ và ADO.NET|
+  LINQ to XML|Truy vấn thông tin trong file XML.|
+* cú pháp truy vấn:
+
+      var lists = from <Biến lưu thông tin từng phần tử> in <Nguồn dữ liệu>
+      [<Phép toán truy vấn: where, join ... in, order by...> Biều thức lambda]
+      select <Biến lưu thông tin từng phần tử>
+ 
         
   
