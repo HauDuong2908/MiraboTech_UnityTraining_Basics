@@ -337,6 +337,40 @@ là tập hợp các đối tượng, truy cập bằng chỉ mục và có các
         }
 
 ## 28. File I/O, Reading and Writing Files, Working with Streams.
+* File là tập hợp lưu trữ có tên cụ thể và đường dẫn thư mục. khi một tệp được mở hoặc ghi, nó sẽ trở thành stream.
+* Stream cơ bản là chuỗi byte đi qua đường dẫn giao tiếp. có hai stream chính: Input Stream và Output Stream. Input Stream được sử dụng để đọc dữ liệu từ file và Output Stream được sử dụng để ghi tệp.
+* System.IO namespace có nhiều lớp khác nhau được sử dụng để thực hiện nhiều thao tác với FIle, Chẳng hạn như Tạo và xóa file, đọc hoặc ghi vào File, đóng File,v.v.
+* Class FileStream trong System.IO namespace giúp đọc, ghi và đóng file. Lớp này bắt nguồn từ lớp trừu tượng Stream.
+* Cú pháp để tạo FileStream:
+
+      FileStream <object_name> = new FileStream( <file_name>, <FileMode Enumerator>,
+      <FileAccess Enumerator>, <FileShare Enumerator>);
+        
+* ví dụ chúng ta tạo một lớp đối tượng FileStream F để đọc một File có tên là Sample.txt:
+
+      FileStream F = new FileStream("sample.txt", FileMode.Open, FileAccess.Read,
+        FileShare.Read);
+
+* FileMode:
+  * Trình liệt kê FileMode xác định các phương pháp khác nhau để mở File. Các thành viên của liệt kê FileMode là:
+    * Append: Mở một File hiện có và đặt con trỏ vào cuối File hoặc tạo File, nếu File không tồn tại.
+    * Create: tạo ra một tập tin mới.
+    * CreateNew: Nó chỉ định cho hệ điều hành, rằng nó sẽ tạo một File mới.
+    * Open: mở một File hiện có.
+    * OpenOrCreate: chỉ định cho hệ điều hành rằng nó sẽ mở một File nếu nó tồn tại, nếu không nó sẽ tạo một File mới.
+    * Truncate: Nó mở một File hiện có và cắt giảm kích thước của nó xuống 0 byte.
+* Truy cập File: FileAccess enumerators có các Member: Read, ReadWrite và Write.
+* FileShare:
+  * FileShare enumerators có các Members sau:
+    * Inheritable: Nó cho phép một xử lý File chuyển kế thừa cho các tiến trình con
+    * None: Nó từ chối chia sẻ File hiện tại
+    * Read: Nó cho phép mở File để đọc.
+    * ReadWrite: Nó cho phép mở các tập tin để đọc và ghi
+    * Write: Nó cho phép mở File để viết
+
+## 29. Serialization and Deserialization.
+* Serialization: quá trình đưa một đối tượng vào một hình thức mà nó có thể được viết trên luồng. Đó là quá trình chuyển đổi đối tượng thành một biểu mẫu để nó có thể được lưu trữ trên tệp, cơ sở dữ liệu hoặc bộ nhớ; Hoặc, nó có thể được chuyển qua mạng. Mục đích chính của nó là lưu trạng thái của đối tượng để nó có thể được tạo lại khi cần thiết.
+* Deserialization: quá trình đảo ngược của tuần tự hóa. Đó là quá trình lấy lại đối tượng được tuần tự hóa để nó có thể được tải vào bộ nhớ. Nó phục hồi trạng thái của đối tượng bằng cách thiết lập các thuộc tính, trường, v.v.
 
         
   
