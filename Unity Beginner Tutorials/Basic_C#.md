@@ -302,5 +302,8 @@ là tập hợp các đối tượng, truy cập bằng chỉ mục và có các
           this IEnumerable<TSource> source, Func<TSource, bool> predicate
         );
 * LINQ to Objects thay thế các đoạn mã lặp bằng các câu truy vấn ngắn gọn, dễ đọc, hiệu quả. Có thể dễ dàng chuyển đổi giữa các nguồn dữ liệu mà không cần chỉnh sửa hay chỉnh sửa rất ít.
+## 27. Exceptions, Exception Handling, try catch, Finaly block.
+* Exceptions là khi thực hiện mã C# các lỗi có thể xảy ra: lỗi mã hóa do lập trình viên thực hiện, lỗi do nhập sai, điều không lường trước khác.
+ * khi xảy ra lỗi, C# thường sẽ dừng và tạo ra thông báo lỗi. Xử lý ngoại lệ C# được xây dựng dựa trên bốn từ khóa: try, catch, finally, và throw.
         
   
