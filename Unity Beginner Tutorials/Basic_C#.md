@@ -305,5 +305,36 @@ là tập hợp các đối tượng, truy cập bằng chỉ mục và có các
 ## 27. Exceptions, Exception Handling, try catch, Finaly block.
 * Exceptions là khi thực hiện mã C# các lỗi có thể xảy ra: lỗi mã hóa do lập trình viên thực hiện, lỗi do nhập sai, điều không lường trước khác.
  * khi xảy ra lỗi, C# thường sẽ dừng và tạo ra thông báo lỗi. Xử lý ngoại lệ C# được xây dựng dựa trên bốn từ khóa: try, catch, finally, và throw.
+  * try: Một khối thử xác định một khối mã mà các ngoại lệ cụ thể được kích hoạt. Tiếp theo một hoặc nhiều khối bắt 
+  * Catch: Một chương trình bắt một ngoại lệ với một trình xử lý ngoại lệ tại nơi trong một chương trình mà bạn muốn xử lý vấn đề. Từ khóa Catch cho biết việc bắt một ngoại lệ.
+  * Finally: khối cuối cùng được sử dụng để thực hiện một tập hợp các câu lệnh nhất định, cho dù một ngoại lệ được ném hay không.
+  * Throw: Một chương trình ném một ngoại lệ khi một vấn đề xuất hiện. Điều này được thực hiện bằng cách sử dụng một từ khóa ném.
+    * ví dụ: bạn mở một tệp, nó phải được đóng cho dù có ngoại lệ hay không
+  * Exception Handling: C# cung cấp một giải pháp có cấu trúc để xử lý ngoại lệ dưới dạng Try And Catch Block. Sử dụng Block này, các câu lệnh chương trình được tách ra khỏi lệnh xử lý lỗi.
+    * Các Block xử lý lỗi này được triễn khai bằng cách xử dụng các từ khóa Try, Catch and Finally
+    * Ví dụ về ném một ngoại lệ khi xảy ra điều kiện chia cho 0:
+    
+          class Number {
+            int result;
+            
+            Number() {
+              result = 0;
+            }
+            public void division(int num1, int num2) {
+              try {
+                  result = num1 / num2;
+              } catch (DivideByZeroException e) {
+                  Console.WriteLine("Exception caught: {0}", e);
+              } finally {
+                  Console.WriteLine("Result: {0}", result);
+              }
+            }
+            static void Main(string[] args) {
+              Number d = new Number();
+              d.division(25, 0);
+              Console.ReadKey();
+            }
+        }
+
         
   
